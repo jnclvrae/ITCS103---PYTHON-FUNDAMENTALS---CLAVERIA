@@ -1,0 +1,27 @@
+word = input("Enter a word: ")
+
+number_list = []
+for x in range(len(word)):
+    number = int(input(f"Enter number {x + 1}: "))
+    number_list.append(number)
+
+print(number_list)
+print(f"The length of the word is {len(word)}.")
+
+def calculate_average(numbers):
+    return sum(numbers) / len(numbers)
+
+average = calculate_average(number_list)
+print(f"The average of the numbers is {average}.")
+
+def compare_length_to_average(word, average):
+    if len(word) > average:
+        print(f"The length of the word '{word}' is greater than the average.")
+    elif len(word) < average:
+        print(f"The length of the word '{word}' is less than the average.")
+    elif len(word) == average:
+        print(f"The length of the word '{word}' is equal the average.")
+    else:
+        print("Unexpected condition occurred.")
+
+compare_length_to_average(word, average)
